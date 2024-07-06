@@ -22,7 +22,7 @@ struct ListCell: View {
                         .font(.system(size: 14, weight: .medium))
                         .padding(.leading)
                     
-                    Text("turns 21")
+                    Text("turns \(person.calculateTurnsAge())")
                         .font(.system(size: 14, weight: .medium))
                         .padding(10)
                 }
@@ -32,7 +32,7 @@ struct ListCell: View {
             Spacer()
             
             VStack {
-                Text("20")
+                Text(person.calculateLeftDays() ?? "0")
                     .font(.system(size: 16, weight: .bold))
                 
                 Text("Days")

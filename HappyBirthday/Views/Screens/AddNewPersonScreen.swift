@@ -22,6 +22,7 @@ struct AddNewPersonScreen: View {
     private var isAddButtonDisable: Bool {
         name.isEmpty
     }
+    
     var body: some View {
         NavigationStack {
             List {

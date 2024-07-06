@@ -15,11 +15,10 @@ struct ListScreen: View {
         NavigationStack {
             ScrollView {
                 LazyVStack {
-                    ForEach(viewModel.people.indices, id: \.self) { index in
-                        ListCell(person: viewModel.people[index])
-                        if index != viewModel.people.indices.last {
-                            Divider()
-                        }
+                    ForEach(viewModel.people) { person in
+                        ListCell(person: person)
+                        Divider()
+                            .padding(.horizontal)
                     }
                 }
             }
