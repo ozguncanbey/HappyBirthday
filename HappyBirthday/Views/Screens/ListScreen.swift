@@ -9,13 +9,31 @@ import SwiftUI
 
 struct ListScreen: View {
     @StateObject var viewModel = ListViewModel()
+    @State private var navigateToAddNewPersonScreen = false
     
     var body: some View {
         NavigationStack {
-            LazyVStack {
-                ForEach(viewModel.people.indices, id: \.self) { index in
-                    
+            ScrollView {
+                LazyVStack {
+                    ForEach(viewModel.people.indices, id: \.self) { index in
+                        ListCell(person: viewModel.people[index])
+                        if index != viewModel.people.indices.last {
+                            Divider()
+                        }
+                    }
                 }
+            }
+            .navigationTitle("Happy Birthday")
+            .toolbar {
+                ToolbarItem {
+                    Button("Add", systemImage: "plus.circle.fill", role: .destructive) {
+                        navigateToAddNewPersonScreen = true
+                    }
+                }
+            }
+            .padding(.top)
+            .navigationDestination(isPresented: $navigateToAddNewPersonScreen) {
+                AddNewPersonScreen()
             }
         }
     }

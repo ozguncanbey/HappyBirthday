@@ -17,7 +17,7 @@
 		77033A552C36D2D200EC9F9A /* API_URLs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77033A542C36D2D200EC9F9A /* API_URLs.swift */; };
 		77033A572C36D2F600EC9F9A /* ListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77033A562C36D2F600EC9F9A /* ListViewModel.swift */; };
 		77033A592C36D48000EC9F9A /* ListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77033A582C36D48000EC9F9A /* ListCell.swift */; };
-		77033A5B2C36D49E00EC9F9A /* AddPersonScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77033A5A2C36D49E00EC9F9A /* AddPersonScreen.swift */; };
+		77033A5B2C36D49E00EC9F9A /* AddNewPersonScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77033A5A2C36D49E00EC9F9A /* AddNewPersonScreen.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,7 +32,7 @@
 		77033A542C36D2D200EC9F9A /* API_URLs.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = API_URLs.swift; sourceTree = "<group>"; };
 		77033A562C36D2F600EC9F9A /* ListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewModel.swift; sourceTree = "<group>"; };
 		77033A582C36D48000EC9F9A /* ListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListCell.swift; sourceTree = "<group>"; };
-		77033A5A2C36D49E00EC9F9A /* AddPersonScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPersonScreen.swift; sourceTree = "<group>"; };
+		77033A5A2C36D49E00EC9F9A /* AddNewPersonScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewPersonScreen.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -147,7 +147,7 @@
 			isa = PBXGroup;
 			children = (
 				77033A4B2C36D18300EC9F9A /* ListScreen.swift */,
-				77033A5A2C36D49E00EC9F9A /* AddPersonScreen.swift */,
+				77033A5A2C36D49E00EC9F9A /* AddNewPersonScreen.swift */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -238,7 +238,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				77033A5B2C36D49E00EC9F9A /* AddPersonScreen.swift in Sources */,
+				77033A5B2C36D49E00EC9F9A /* AddNewPersonScreen.swift in Sources */,
 				77033A552C36D2D200EC9F9A /* API_URLs.swift in Sources */,
 				77033A4F2C36D2B400EC9F9A /* Person.swift in Sources */,
 				77033A572C36D2F600EC9F9A /* ListViewModel.swift in Sources */,

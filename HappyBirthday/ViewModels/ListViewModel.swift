@@ -19,7 +19,9 @@ final class ListViewModel: ObservableObject {
             guard let self = self else { return }
             guard let result = result else { return }
             
-            people = result
+            DispatchQueue.main.async {
+                self.people = result
+            }
         }
     }
 }

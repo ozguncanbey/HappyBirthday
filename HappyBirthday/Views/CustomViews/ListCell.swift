@@ -12,25 +12,34 @@ struct ListCell: View {
     
     var body: some View {
         HStack {
-            VStack {
+            VStack(alignment: .leading) {
                 Text(person.name ?? "No Name")
-                    .font(.system(size: 18, weight: .bold))
-                    .padding()
-                
-                Spacer()
+                    .font(.system(size: 16, weight: .bold))
+                    .padding(.leading)
                 
                 HStack {
                     Text(person.birthday ?? "No Date")
-                        .font(.system(size: 16, weight: .semibold))
+                        .font(.system(size: 14, weight: .medium))
+                        .padding(.leading)
                     
                     Text("turns 21")
-                        .padding()
+                        .font(.system(size: 14, weight: .medium))
+                        .padding(10)
                 }
             }
+            .padding()
             
             Spacer()
             
-            
+            VStack {
+                Text("20")
+                    .font(.system(size: 16, weight: .bold))
+                
+                Text("Days")
+                    .font(.system(size: 16, weight: .medium))
+                    .padding(10)
+            }
+            .padding()
         }
     }
 }
