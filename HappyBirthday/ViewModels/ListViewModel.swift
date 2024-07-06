@@ -24,4 +24,15 @@ final class ListViewModel: ObservableObject {
             }
         }
     }
+    
+    /// sorts list as left days to birthday
+    func peopleSortedByDaysLeft() -> [Person] {
+        return people.sorted(by: { person1, person2 in
+            guard let daysLeft1 = person1.calculateLeftDays(),
+                  let daysLeft2 = person2.calculateLeftDays() else {
+                return false
+            }
+            return Int(daysLeft1)! < Int(daysLeft2)!
+        })
+    }
 }

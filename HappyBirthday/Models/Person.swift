@@ -21,17 +21,20 @@ struct Person: Codable, Identifiable {
 
 extension Person {
     
+    /// converts date to required format
     private var dateFormatter: DateFormatter {
         let formatter = DateFormatter()
-        formatter.dateFormat = "dd/mm/yyyy"
+        formatter.dateFormat = "dd/MM/yyyy"
         return formatter
     }
     
+    /// converts string to date
     func dateOfBirth() -> Date? {
         guard let birthday = birthday else { return nil }
         return dateFormatter.date(from: birthday)
     }
     
+    /// calculates the age
     func calculateTurnsAge() -> Int {
         let calendar = Calendar.current
         let now = Date()
@@ -39,24 +42,24 @@ extension Person {
         let ageComponents = calendar.dateComponents([.year], from: dateOfBirth()!, to: now)
         let age = ageComponents.year ?? 0
         
-        return age
+        return age + 1
     }
     
+    /// calculates how many days between today and birthday
     func calculateLeftDays() -> String? {
         guard let dateOfBirth = dateOfBirth() else { return nil }
         
         let calendar = Calendar.current
         let now = Date()
         
-        // Doğum günü bu yıl mı, yoksa gelecek yıl mı hesapla
         var components = calendar.dateComponents([.month, .day], from: dateOfBirth)
         components.year = calendar.component(.year, from: now)
         
+        // Calculate is birth date this year or not
         guard let birthdayThisYear = calendar.date(from: components) else {
             return nil
         }
         
-        // Doğum günü bu yıl geçtiyse, bir sonraki yıl hesapla
         if now >= birthdayThisYear {
             components.year! += 1
         }
