@@ -8,17 +8,31 @@
 
 /* Begin PBXBuildFile section */
 		77033A352C36D10500EC9F9A /* HappyBirthdayApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77033A342C36D10500EC9F9A /* HappyBirthdayApp.swift */; };
-		77033A372C36D10500EC9F9A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77033A362C36D10500EC9F9A /* ContentView.swift */; };
 		77033A392C36D10700EC9F9A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 77033A382C36D10700EC9F9A /* Assets.xcassets */; };
 		77033A3C2C36D10700EC9F9A /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 77033A3B2C36D10700EC9F9A /* Preview Assets.xcassets */; };
+		77033A4C2C36D18300EC9F9A /* ListScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77033A4B2C36D18300EC9F9A /* ListScreen.swift */; };
+		77033A4F2C36D2B400EC9F9A /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77033A4E2C36D2B400EC9F9A /* Person.swift */; };
+		77033A512C36D2C400EC9F9A /* WebService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77033A502C36D2C400EC9F9A /* WebService.swift */; };
+		77033A532C36D2CB00EC9F9A /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77033A522C36D2CB00EC9F9A /* NetworkManager.swift */; };
+		77033A552C36D2D200EC9F9A /* API_URLs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77033A542C36D2D200EC9F9A /* API_URLs.swift */; };
+		77033A572C36D2F600EC9F9A /* ListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77033A562C36D2F600EC9F9A /* ListViewModel.swift */; };
+		77033A592C36D48000EC9F9A /* ListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77033A582C36D48000EC9F9A /* ListCell.swift */; };
+		77033A5B2C36D49E00EC9F9A /* AddPersonScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77033A5A2C36D49E00EC9F9A /* AddPersonScreen.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		77033A312C36D10500EC9F9A /* HappyBirthday.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HappyBirthday.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		77033A342C36D10500EC9F9A /* HappyBirthdayApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HappyBirthdayApp.swift; sourceTree = "<group>"; };
-		77033A362C36D10500EC9F9A /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		77033A382C36D10700EC9F9A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		77033A3B2C36D10700EC9F9A /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		77033A4B2C36D18300EC9F9A /* ListScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListScreen.swift; sourceTree = "<group>"; };
+		77033A4E2C36D2B400EC9F9A /* Person.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
+		77033A502C36D2C400EC9F9A /* WebService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebService.swift; sourceTree = "<group>"; };
+		77033A522C36D2CB00EC9F9A /* NetworkManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		77033A542C36D2D200EC9F9A /* API_URLs.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = API_URLs.swift; sourceTree = "<group>"; };
+		77033A562C36D2F600EC9F9A /* ListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewModel.swift; sourceTree = "<group>"; };
+		77033A582C36D48000EC9F9A /* ListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListCell.swift; sourceTree = "<group>"; };
+		77033A5A2C36D49E00EC9F9A /* AddPersonScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPersonScreen.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,8 +65,14 @@
 		77033A332C36D10500EC9F9A /* HappyBirthday */ = {
 			isa = PBXGroup;
 			children = (
-				77033A342C36D10500EC9F9A /* HappyBirthdayApp.swift */,
-				77033A362C36D10500EC9F9A /* ContentView.swift */,
+				77033A482C36D16500EC9F9A /* App */,
+				77033A472C36D15C00EC9F9A /* Extensions */,
+				77033A4D2C36D29700EC9F9A /* Utilities */,
+				77033A462C36D15700EC9F9A /* Managers */,
+				77033A452C36D15200EC9F9A /* Services */,
+				77033A442C36D14E00EC9F9A /* Models */,
+				77033A432C36D14800EC9F9A /* ViewModels */,
+				77033A422C36D14100EC9F9A /* Views */,
 				77033A382C36D10700EC9F9A /* Assets.xcassets */,
 				77033A3A2C36D10700EC9F9A /* Preview Content */,
 			);
@@ -65,6 +85,87 @@
 				77033A3B2C36D10700EC9F9A /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		77033A422C36D14100EC9F9A /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				77033A492C36D16C00EC9F9A /* Screens */,
+				77033A4A2C36D17100EC9F9A /* CustomViews */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		77033A432C36D14800EC9F9A /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				77033A562C36D2F600EC9F9A /* ListViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		77033A442C36D14E00EC9F9A /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				77033A4E2C36D2B400EC9F9A /* Person.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		77033A452C36D15200EC9F9A /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				77033A502C36D2C400EC9F9A /* WebService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		77033A462C36D15700EC9F9A /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				77033A522C36D2CB00EC9F9A /* NetworkManager.swift */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
+		77033A472C36D15C00EC9F9A /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		77033A482C36D16500EC9F9A /* App */ = {
+			isa = PBXGroup;
+			children = (
+				77033A342C36D10500EC9F9A /* HappyBirthdayApp.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		77033A492C36D16C00EC9F9A /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				77033A4B2C36D18300EC9F9A /* ListScreen.swift */,
+				77033A5A2C36D49E00EC9F9A /* AddPersonScreen.swift */,
+			);
+			path = Screens;
+			sourceTree = "<group>";
+		};
+		77033A4A2C36D17100EC9F9A /* CustomViews */ = {
+			isa = PBXGroup;
+			children = (
+				77033A582C36D48000EC9F9A /* ListCell.swift */,
+			);
+			path = CustomViews;
+			sourceTree = "<group>";
+		};
+		77033A4D2C36D29700EC9F9A /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				77033A542C36D2D200EC9F9A /* API_URLs.swift */,
+			);
+			path = Utilities;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,8 +238,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				77033A372C36D10500EC9F9A /* ContentView.swift in Sources */,
+				77033A5B2C36D49E00EC9F9A /* AddPersonScreen.swift in Sources */,
+				77033A552C36D2D200EC9F9A /* API_URLs.swift in Sources */,
+				77033A4F2C36D2B400EC9F9A /* Person.swift in Sources */,
+				77033A572C36D2F600EC9F9A /* ListViewModel.swift in Sources */,
 				77033A352C36D10500EC9F9A /* HappyBirthdayApp.swift in Sources */,
+				77033A532C36D2CB00EC9F9A /* NetworkManager.swift in Sources */,
+				77033A592C36D48000EC9F9A /* ListCell.swift in Sources */,
+				77033A512C36D2C400EC9F9A /* WebService.swift in Sources */,
+				77033A4C2C36D18300EC9F9A /* ListScreen.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
