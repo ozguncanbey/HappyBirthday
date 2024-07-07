@@ -27,6 +27,7 @@ final class ListViewModel: ObservableObject {
         }
     }
     
+    /// filters people as category
     func filterPeople(by category: Category) {
         if category == .All {
             filteredPeople = people
@@ -35,20 +36,9 @@ final class ListViewModel: ObservableObject {
         }
     }
     
-    func getPeopleAsCategory(as category: String) {
-        service.downloadAsCategory(as: category) { [weak self] result in
-            guard let self = self else { return }
-            guard let result = result else { return }
-            
-            DispatchQueue.main.async {
-                self.people = result
-            }
-        }
-    }
-    
     /// sorts list as left days to birthday
     func peopleSortedByDaysLeft() -> [Person] {
-        return people.sorted(by: { person1, person2 in
+        return filteredPeople.sorted(by: { person1, person2 in
             guard let daysLeft1 = person1.calculateLeftDays(),
                   let daysLeft2 = person2.calculateLeftDays() else {
                 return false

@@ -10,11 +10,7 @@ import SwiftUI
 struct ListScreen: View {
     @StateObject var viewModel = ListViewModel()
     @State private var navigateToAddNewPersonScreen = false
-    @State private var category: Category = .All {
-        didSet {
-            viewModel.filterPeople(by: category)
-        }
-    }
+    @State private var category: Category = .All
     
     var body: some View {
         NavigationStack {
@@ -25,9 +21,12 @@ struct ListScreen: View {
                             .tag($0)
                     }
                 }
-                .pickerStyle(.palette)
+                .pickerStyle(.segmented)
                 .padding(.horizontal)
                 .padding(.bottom)
+                .onChange(of: category) {
+                    viewModel.filterPeople(by: category)
+                }
                 
                 LazyVStack {
                     ForEach(viewModel.peopleSortedByDaysLeft()) { person in
