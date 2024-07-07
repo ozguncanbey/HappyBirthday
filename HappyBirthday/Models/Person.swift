@@ -11,11 +11,12 @@ struct Person: Codable, Identifiable {
     let id: Int?
     let name: String?
     let birthday: String?
+    let category: String?
     
     enum CodingKeys: String, CodingKey {
         case id
         case name = "fullname"
-        case birthday
+        case birthday, category
     }
 }
 
@@ -76,6 +77,6 @@ extension Person {
 
 extension Person {
     static var dummy: Person {
-        .init(id: 0, name: "Özgün Can Beydili", birthday: "02/10/2002")
+        .init(id: 0, name: "Özgün Can Beydili", birthday: "02/10/2002", category: "Family")
     }
 }

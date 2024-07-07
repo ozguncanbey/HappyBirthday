@@ -12,13 +12,11 @@ struct AddNewPersonScreen: View {
     @Environment(\.dismiss) var dismiss
     @State private var name = ""
     @State private var date: Date = .init()
-    @State private var category = "Family"
+    @State private var category: Category = .Family
     
     let startDate = Calendar.current.date(byAdding: .year, value: -124, to: Date())!
     let endDate = Date()
-    
-    private let categories = ["Family","Friend","Other"]
-    
+
     private var isAddButtonDisable: Bool {
         name.isEmpty
     }
@@ -39,8 +37,8 @@ struct AddNewPersonScreen: View {
                 Section() {
                     HStack {
                         Picker("Category", selection: $category){
-                            ForEach(categories, id: \.self) {
-                                Text($0)
+                            ForEach(Category.selectableCategories, id: \.self) {
+                                Text($0.rawValue)
                             }
                         }
                         .pickerStyle(.menu)

@@ -15,4 +15,8 @@ enum API_URLs {
     static func api() -> String {
         "\(baseURL)\(endpoint)"
     }
+    
+    static func apiAsCategory(as category: String) -> String {
+        "\(baseURL)\(endpoint)/\(category)"
+    }
 }

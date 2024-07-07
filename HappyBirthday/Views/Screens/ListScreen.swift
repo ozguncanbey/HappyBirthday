@@ -10,12 +10,27 @@ import SwiftUI
 struct ListScreen: View {
     @StateObject var viewModel = ListViewModel()
     @State private var navigateToAddNewPersonScreen = false
+    @State private var category: Category = .All {
+        didSet {
+            viewModel.filterPeople(by: category)
+        }
+    }
     
     var body: some View {
         NavigationStack {
             ScrollView {
+                Picker("", selection: $category) {
+                    ForEach(Category.allCases, id: \.self) {
+                        Text($0.rawValue)
+                            .tag($0)
+                    }
+                }
+                .pickerStyle(.palette)
+                .padding(.horizontal)
+                .padding(.bottom)
+                
                 LazyVStack {
-                    ForEach(viewModel.people) { person in
+                    ForEach(viewModel.peopleSortedByDaysLeft()) { person in
                         ListCell(person: person)
                         Divider()
                             .padding(.horizontal)
@@ -34,6 +49,9 @@ struct ListScreen: View {
             .navigationDestination(isPresented: $navigateToAddNewPersonScreen) {
                 AddNewPersonScreen()
             }
+        }
+        .onAppear {
+            viewModel.filterPeople(by: category)
         }
     }
 }

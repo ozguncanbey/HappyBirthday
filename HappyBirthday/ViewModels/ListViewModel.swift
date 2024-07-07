@@ -11,11 +11,32 @@ final class ListViewModel: ObservableObject {
     
     private let service = WebService()
     @Published var people: [Person] = []
+    @Published var filteredPeople: [Person] = []
     
     init() { getPeople() }
     
     func getPeople() {
         service.download { [weak self] result in
+            guard let self = self else { return }
+            guard let result = result else { return }
+            
+            DispatchQueue.main.async {
+                self.people = result
+                self.filteredPeople = result
+            }
+        }
+    }
+    
+    func filterPeople(by category: Category) {
+        if category == .All {
+            filteredPeople = people
+        } else {
+            filteredPeople = people.filter { $0.category == category.rawValue }
+        }
+    }
+    
+    func getPeopleAsCategory(as category: String) {
+        service.downloadAsCategory(as: category) { [weak self] result in
             guard let self = self else { return }
             guard let result = result else { return }
             
