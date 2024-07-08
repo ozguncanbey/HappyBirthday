@@ -43,14 +43,6 @@ struct ListScreen: View {
                 }
             }
             .navigationTitle("Happy Birthday")
-//            .toolbar {
-//                ToolbarItem {
-//                    Button("Add", systemImage: "plus.circle.fill", role: .destructive) {
-//                        navigateToAddNewPersonScreen = true
-//                    }
-//                    .tint(.primary)
-//                }
-//            }
             .padding(.top)
             .navigationDestination(isPresented: $navigateToAddNewPersonScreen) {
                 AddNewPersonScreen()
