@@ -30,7 +30,7 @@ struct ListScreen: View {
                 
                 if viewModel.peopleSortedByDaysLeft().isEmpty {
                     
-                    ContentUnavailableView("There is nobody!", systemImage: "person.slash.fill", description: Text("Add someone to see"))
+                    ContentUnavailableView("There is nobody", systemImage: "person.slash.fill", description: Text("Add someone to see"))
                     
                 } else {
                     LazyVStack {
@@ -44,7 +44,7 @@ struct ListScreen: View {
             }
             .navigationTitle("Happy Birthday")
             .padding(.top)
-            .navigationDestination(isPresented: $navigateToAddNewPersonScreen) {
+            .sheet(isPresented: $navigateToAddNewPersonScreen) {
                 AddNewPersonScreen()
             }
             
