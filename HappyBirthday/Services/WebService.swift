@@ -24,6 +24,15 @@ final class WebService {
         }
     }
     
+//    func post(person: Person, completion: @escaping ([Person]?) -> ()) {
+//        guard let url = URL(string: API_URLs.api()) else { return }
+//        
+//        var request = URLRequest(url: url)
+//        request.httpMethod = "POST"
+//        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+//
+//    }
+    
     // When error occurs
     private func handleWithError(_ error: Error) {
         print(error.localizedDescription)
