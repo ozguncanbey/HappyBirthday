@@ -43,18 +43,32 @@ struct ListScreen: View {
                 }
             }
             .navigationTitle("Happy Birthday")
-            .toolbar {
-                ToolbarItem {
-                    Button("Add", systemImage: "plus.circle.fill", role: .destructive) {
-                        navigateToAddNewPersonScreen = true
-                    }
-                    .tint(.primary)
-                }
-            }
+//            .toolbar {
+//                ToolbarItem {
+//                    Button("Add", systemImage: "plus.circle.fill", role: .destructive) {
+//                        navigateToAddNewPersonScreen = true
+//                    }
+//                    .tint(.primary)
+//                }
+//            }
             .padding(.top)
             .navigationDestination(isPresented: $navigateToAddNewPersonScreen) {
                 AddNewPersonScreen()
             }
+            
+            Button(action: {
+                navigateToAddNewPersonScreen = true
+            }, label: {
+                Text("Add person")
+                    .font(.headline)
+                    .padding(.vertical, 5)
+                    .padding(.horizontal, 30)
+                    .background(Color(UIColor.black))
+                    .foregroundColor(.white)
+                    .cornerRadius(20)
+            })
+            .padding(.horizontal)
+            .padding(.bottom, 10)
         }
         .onAppear {
             viewModel.filterPeople(by: category)
