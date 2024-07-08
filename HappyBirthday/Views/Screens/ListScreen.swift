@@ -28,11 +28,17 @@ struct ListScreen: View {
                     viewModel.filterPeople(by: category)
                 }
                 
-                LazyVStack {
-                    ForEach(viewModel.peopleSortedByDaysLeft()) { person in
-                        ListCell(person: person)
-                        Divider()
-                            .padding(.horizontal)
+                if viewModel.peopleSortedByDaysLeft().isEmpty {
+                    
+                    ContentUnavailableView("There is nobody!", systemImage: "person.slash.fill", description: Text("Add someone to see"))
+                    
+                } else {
+                    LazyVStack {
+                        ForEach(viewModel.peopleSortedByDaysLeft()) { person in
+                            ListCell(person: person)
+                            Divider()
+                                .padding(.horizontal)
+                        }
                     }
                 }
             }
@@ -42,6 +48,7 @@ struct ListScreen: View {
                     Button("Add", systemImage: "plus.circle.fill", role: .destructive) {
                         navigateToAddNewPersonScreen = true
                     }
+                    .tint(.primary)
                 }
             }
             .padding(.top)
