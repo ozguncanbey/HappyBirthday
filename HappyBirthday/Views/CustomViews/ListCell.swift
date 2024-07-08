@@ -9,6 +9,12 @@ import SwiftUI
 
 struct ListCell: View {
     let person: Person
+    var isBirthdayToday: Bool
+    
+    init(person: Person) {
+        self.person = person
+        self.isBirthdayToday = person.calculateLeftDays() == "0"
+    }
     
     var body: some View {
         HStack {
@@ -22,9 +28,15 @@ struct ListCell: View {
                         .font(.system(size: 14, weight: .medium))
                         .padding(.leading)
                     
-                    Text("turns \(person.calculateTurnsAge())")
-                        .font(.system(size: 14, weight: .medium))
-                        .padding(10)
+                    if isBirthdayToday {
+                        Text("Happy Birthday!")
+                            .font(.system(size: 14, weight: .medium))
+                            .padding(10)
+                    } else {
+                        Text("turns \(person.calculateTurnsAge())")
+                            .font(.system(size: 14, weight: .medium))
+                            .padding(10)
+                    }
                 }
             }
             .padding()
@@ -32,12 +44,18 @@ struct ListCell: View {
             Spacer()
             
             VStack {
-                Text(person.calculateLeftDays() ?? "0")
-                    .font(.system(size: 16, weight: .bold))
-                
-                Text("Days")
-                    .font(.system(size: 16, weight: .medium))
-                    .padding(10)
+                if isBirthdayToday {
+                    Text("🎉")
+                        .font(.system(size: 40))
+                        .padding(10)
+                } else {
+                    Text(person.calculateLeftDays() ?? "0")
+                        .font(.system(size: 16, weight: .bold))
+                    
+                    Text("Days")
+                        .font(.system(size: 16, weight: .medium))
+                        .padding(10)
+                }
             }
             .padding()
         }
