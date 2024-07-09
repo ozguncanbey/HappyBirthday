@@ -8,7 +8,7 @@
 import Foundation
 
 struct Person: Codable, Identifiable {
-    let id: Int?
+    let id = UUID()
     let name: String?
     let birthday: String?
     let category: String?
@@ -22,17 +22,10 @@ struct Person: Codable, Identifiable {
 
 extension Person {
     
-    /// converts date to required format
-    private var dateFormatter: DateFormatter {
-        let formatter = DateFormatter()
-        formatter.dateFormat = "dd/MM/yyyy"
-        return formatter
-    }
-    
     /// converts string to date
     func dateOfBirth() -> Date? {
         guard let birthday = birthday else { return nil }
-        return dateFormatter.date(from: birthday)
+        return DateFormatter.custom.date(from: birthday)
     }
     
     /// calculates the age
@@ -77,6 +70,6 @@ extension Person {
 
 extension Person {
     static var dummy: Person {
-        .init(id: 0, name: "Özgün Can Beydili", birthday: "02/10/2002", category: "Family")
+        .init(name: "Özgün Can Beydili", birthday: "02/10/2002", category: "Family")
     }
 }

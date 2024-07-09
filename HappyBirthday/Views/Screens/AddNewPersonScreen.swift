@@ -14,6 +14,8 @@ struct AddNewPersonScreen: View {
     @State private var date: Date = .init()
     @State private var category: Category = .Family
     
+    @ObservedObject private var viewModel = ListViewModel()
+    
     let startDate = Calendar.current.date(byAdding: .year, value: -124, to: Date())!
     let endDate = Date()
 
@@ -57,6 +59,8 @@ struct AddNewPersonScreen: View {
                 
                 ToolbarItem(placement: .navigationBarTrailing) {
                     Button("Add") {
+                        let person = Person(name: name, birthday: DateFormatter.custom.string(from: date), category: category.rawValue)
+                        viewModel.savePerson(person: person)
                         dismiss()
                     }
                     .disabled(isAddButtonDisable)

@@ -24,14 +24,44 @@ final class WebService {
         }
     }
     
-//    func post(person: Person, completion: @escaping ([Person]?) -> ()) {
-//        guard let url = URL(string: API_URLs.api()) else { return }
-//        
-//        var request = URLRequest(url: url)
-//        request.httpMethod = "POST"
-//        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
-//
-//    }
+    func post(person: Person, completion: @escaping (Result<Person, Error>) -> ()) {
+        guard let url = URL(string: "http://localhost:5166/BirthDays") else {
+            print("Invalid URL")
+            return
+        }
+        
+        var request = URLRequest(url: url)
+        request.httpMethod = "POST"
+        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        
+        do {
+            let jsonData = try JSONEncoder().encode(person)
+            request.httpBody = jsonData
+        } catch {
+            completion(.failure(error))
+            return
+        }
+        
+        URLSession.shared.dataTask(with: request) { data, response, error in
+            if let error = error {
+                completion(.failure(error))
+                return
+            }
+            
+            guard let data = data, let httpResponse = response as? HTTPURLResponse, (200...299).contains(httpResponse.statusCode) else {
+                let error = NSError(domain: "", code: 500, userInfo: [NSLocalizedDescriptionKey : "Unexpected response"])
+                completion(.failure(error))
+                return
+            }
+            
+            do {
+                let savedPerson = try JSONDecoder().decode(Person.self, from: data)
+                completion(.success(savedPerson))
+            } catch {
+                completion(.failure(error))
+            }
+        }.resume()
+    }
     
     // When error occurs
     private func handleWithError(_ error: Error) {

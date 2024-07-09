@@ -18,6 +18,7 @@
 		77033A572C36D2F600EC9F9A /* ListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77033A562C36D2F600EC9F9A /* ListViewModel.swift */; };
 		77033A592C36D48000EC9F9A /* ListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77033A582C36D48000EC9F9A /* ListCell.swift */; };
 		77033A5B2C36D49E00EC9F9A /* AddNewPersonScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77033A5A2C36D49E00EC9F9A /* AddNewPersonScreen.swift */; };
+		779426A32C3D539F0065BBE2 /* DateFormatter+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 779426A22C3D539F0065BBE2 /* DateFormatter+Ext.swift */; };
 		77C7494D2C3ADE3F005746F7 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77C7494C2C3ADE3F005746F7 /* Category.swift */; };
 /* End PBXBuildFile section */
 
@@ -34,6 +35,7 @@
 		77033A562C36D2F600EC9F9A /* ListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewModel.swift; sourceTree = "<group>"; };
 		77033A582C36D48000EC9F9A /* ListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListCell.swift; sourceTree = "<group>"; };
 		77033A5A2C36D49E00EC9F9A /* AddNewPersonScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewPersonScreen.swift; sourceTree = "<group>"; };
+		779426A22C3D539F0065BBE2 /* DateFormatter+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DateFormatter+Ext.swift"; sourceTree = "<group>"; };
 		77C7494C2C3ADE3F005746F7 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -134,6 +136,7 @@
 		77033A472C36D15C00EC9F9A /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				779426A22C3D539F0065BBE2 /* DateFormatter+Ext.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -247,6 +250,7 @@
 				77033A4F2C36D2B400EC9F9A /* Person.swift in Sources */,
 				77033A572C36D2F600EC9F9A /* ListViewModel.swift in Sources */,
 				77033A352C36D10500EC9F9A /* HappyBirthdayApp.swift in Sources */,
+				779426A32C3D539F0065BBE2 /* DateFormatter+Ext.swift in Sources */,
 				77033A532C36D2CB00EC9F9A /* NetworkManager.swift in Sources */,
 				77033A592C36D48000EC9F9A /* ListCell.swift in Sources */,
 				77033A512C36D2C400EC9F9A /* WebService.swift in Sources */,

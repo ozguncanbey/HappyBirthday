@@ -27,12 +27,11 @@ final class ListViewModel: ObservableObject {
         }
     }
     
-//    func savePerson(person: Person) {
-//        service.post(person: person) { [weak self] result in
-//            guard let self = self else { return }
-//            guard let result = result else { return }
-//        }
-//    }
+    func savePerson(person: Person) {
+        service.post(person: person) { [weak self] _ in
+            guard self != nil else { return }
+        }
+    }
     
     /// filters people as category
     func filterPeople(by category: Category) {
