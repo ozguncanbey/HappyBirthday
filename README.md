@@ -1,6 +1,6 @@
-# HappyBirthDay
+# HappyBirthday
 
-HappyBirthDay is a lightweight mobile application developed using SwiftUI and follows the MVVM (Model-View-ViewModel) architecture. It helps users keep track of birthdays efficiently with a minimalistic user interface.
+HappyBirthday is a lightweight mobile application developed using SwiftUI and follows the MVVM (Model-View-ViewModel) architecture. It helps users keep track of birthdays efficiently with a minimalistic user interface.
 
 ## Features
 
