@@ -46,6 +46,9 @@ struct ListScreen: View {
             .padding(.top)
             .sheet(isPresented: $navigateToAddNewPersonScreen) {
                 AddNewPersonScreen()
+                    .onDisappear {
+                        viewModel.getPeople()
+                    }
             }
             
             Button(action: {

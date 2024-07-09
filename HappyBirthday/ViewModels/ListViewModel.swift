@@ -29,7 +29,12 @@ final class ListViewModel: ObservableObject {
     
     func savePerson(person: Person) {
         service.post(person: person) { [weak self] _ in
-            guard self != nil else { return }
+            guard let self = self else { return }
+            
+            // Add or update the person in `people` array
+            DispatchQueue.main.async {
+                self.filterPeople(by: .All)
+            }
         }
     }
     

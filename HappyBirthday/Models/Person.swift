@@ -46,25 +46,38 @@ extension Person {
         let calendar = Calendar.current
         let now = Date()
         
-        var components = calendar.dateComponents([.month, .day], from: dateOfBirth)
-        components.year = calendar.component(.year, from: now)
+        // Zero out the time components of the current date
+        var nowComponents = calendar.dateComponents([.year, .month, .day], from: now)
+        nowComponents.hour = 0
+        nowComponents.minute = 0
+        nowComponents.second = 0
         
-        // Calculate is birth date this year or not
+        guard let today = calendar.date(from: nowComponents) else {
+            return nil
+        }
+        
+        // Get components for the dateOfBirth and reset the time components
+        var components = calendar.dateComponents([.month, .day], from: dateOfBirth)
+        components.year = calendar.component(.year, from: today)
+        
+        // Calculate the birthday this year
         guard let birthdayThisYear = calendar.date(from: components) else {
             return nil
         }
         
-        if now >= birthdayThisYear {
+        if today > birthdayThisYear {
             components.year! += 1
+        } else if today == birthdayThisYear {
+            return "0"
         }
         
         guard let nextBirthday = calendar.date(from: components) else {
             return nil
         }
         
-        let daysLeft = calendar.dateComponents([.day], from: now, to: nextBirthday).day
+        let daysLeft = calendar.dateComponents([.day], from: today, to: nextBirthday).day
         
-        return daysLeft?.codingKey.stringValue
+        return daysLeft != nil ? String(daysLeft!) : nil
     }
 }
 
